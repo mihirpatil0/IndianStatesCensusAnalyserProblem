@@ -11,7 +11,7 @@ import java.util.List;
 
 public class IndianStateCensusAnalyzer
 {
-    private static final String FILE_PATH = "C:\\Users\\mihir\\IdeaProjects\\IndianStatesCensusAnalyser\\src\\main\\resources";
+    private static final String FILE_PATH = "C:\\Users\\mihir\\IdeaProjects\\IndianStatesCensusAnalyser\\src\\resources";
     private static final String INDIAN_STATE_CENCUS = "/IndiaStateCensusData.csv";
 
     public List<StateCences> readInIndiaStateCensusData()
