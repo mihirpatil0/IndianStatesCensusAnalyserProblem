@@ -34,4 +34,20 @@ public class IndianStateCodeTest
             Assertions.assertEquals(CustomExceptionService.ExceptionType.WRONG_FILE_TYPE, e.type);
         }
     }
+
+    @Test
+    public void givenWrongFile_ShouldReturnFileNotFound()
+    {
+        String fileName = "/StateCodeing.csv";
+        IndianStateCodeService censusService = new IndianStateCodeService();
+        try
+        {
+            List<StateCode> StateCodeList = censusService.readIndiaStatCode(fileName);
+            Assertions.assertEquals(37, StateCodeList.size());
+        }
+        catch (CustomExceptionService e)
+        {
+            Assertions.assertEquals(CustomExceptionService.ExceptionType.FILE_NOT_FOUND, e.type);
+        }
+    }
 }
