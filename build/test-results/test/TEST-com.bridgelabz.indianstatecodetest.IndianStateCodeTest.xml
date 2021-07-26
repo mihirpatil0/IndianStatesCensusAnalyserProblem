@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.indianstatecodetest.IndianStateCodeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-26T18:00:19" hostname="NARUTO" time="0.126">
+<testsuite name="com.bridgelabz.indianstatecodetest.IndianStateCodeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-26T18:14:22" hostname="NARUTO" time="0.021">
   <properties/>
-  <testcase name="givenReadDataFromIndianCensus_ShouldReturnCountDataPresentInFile()" classname="com.bridgelabz.indianstatecodetest.IndianStateCodeTest" time="0.126"/>
+  <testcase name="givenWrongFileExtention_ShouldReturnWrongFileType()" classname="com.bridgelabz.indianstatecodetest.IndianStateCodeTest" time="0.021"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
