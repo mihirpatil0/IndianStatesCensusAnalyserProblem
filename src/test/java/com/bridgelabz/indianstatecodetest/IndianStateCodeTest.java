@@ -50,4 +50,20 @@ public class IndianStateCodeTest
             Assertions.assertEquals(CustomExceptionService.ExceptionType.FILE_NOT_FOUND, e.type);
         }
     }
+
+    @Test
+    public void givenWrongFileHeaders_ShouldReturnWrongHeader()
+    {
+        String fileName = "/IndiaStateCensusDataWrongHeaders.csv";
+        IndianStateCodeService codeService = new IndianStateCodeService ();
+        try
+        {
+            List<StateCode> stateCodeList = codeService.readIndiaStatCode(fileName);
+            Assertions.assertEquals(37, stateCodeList.size());
+        }
+        catch (CustomExceptionService e)
+        {
+            Assertions.assertEquals(CustomExceptionService.ExceptionType.WRONG_HEADER, e.type);
+        }
+    }
 }
