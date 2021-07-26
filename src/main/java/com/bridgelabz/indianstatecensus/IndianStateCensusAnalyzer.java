@@ -18,9 +18,12 @@ public class IndianStateCensusAnalyzer
     {
         try
         {
+            if (!FileName.split("\\.")[1].equals("csv"))
+            {
+                throw new CustomExceptionService(CustomExceptionService.ExceptionType.WRONG_FILE_TYPE,"enter proper extension");
+            }
             Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH+FileName));
-            CsvToBean<StateCences> csvToBean;
-            csvToBean = new CsvToBeanBuilder<StateCences>(reader)
+            CsvToBean<StateCences> csvToBean = new CsvToBeanBuilder<StateCences>(reader)
                     .withType(StateCences.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
