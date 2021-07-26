@@ -19,7 +19,8 @@ public class IndianStateCensusAnalyzer
         try
         {
             Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH+INDIAN_STATE_CENCUS));
-            CsvToBean<StateCences> csvToBean = new CsvToBeanBuilder<StateCences>(reader)
+            CsvToBean<StateCences> csvToBean;
+            csvToBean = new CsvToBeanBuilder<StateCences>(reader)
                     .withType(StateCences.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
