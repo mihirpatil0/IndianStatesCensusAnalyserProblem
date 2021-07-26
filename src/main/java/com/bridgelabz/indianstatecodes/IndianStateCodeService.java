@@ -1,4 +1,4 @@
-package com.bridgelabz.indianstatecensus;
+package com.bridgelabz.indianstatecodes;
 
 import com.bridgelabz.customexception.CustomExceptionService;
 import com.opencsv.CSVReader;
@@ -16,12 +16,12 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
-public class IndianStateCensusAnalyzer
+public class IndianStateCodeService
 {
     private static final String FILE_PATH = "C:\\Users\\mihir\\IdeaProjects\\IndianStatesCensusAnalyser\\src\\resources";
-    String[] headers = {"State", "Population", "AreaInSqKm", "DensityPerSqKm"};
+    String[] headers = {"SrNo","State Name","TIN","StateCode"};
 
-    public List<StateCences> readInIndiaStateCensusData(String fileName)
+    public List<StateCode> readIndiaStatCode(String fileName)
     {
         try
         {
@@ -34,14 +34,14 @@ public class IndianStateCensusAnalyzer
             String fileHeaders[] = new CSVReader(new FileReader(FILE_PATH+fileName)).readNext();
             if (!Arrays.toString(fileHeaders).equals(Arrays.toString(headers)))
             {
-                throw new CustomExceptionService(CustomExceptionService.ExceptionType.WRONG_HEADER,"enter proper extension");
+                throw new CustomExceptionService(CustomExceptionService.ExceptionType.WRONG_HEADER,"Header missmatch");
             }
-            Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH+fileName));   //reader to read contacts
-            CsvToBean<StateCences> csvToBean = new CsvToBeanBuilder<StateCences>(reader)
-                    .withType(StateCences.class)
+            Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH+fileName));
+            CsvToBean<StateCode> csvToBean = new CsvToBeanBuilder<StateCode>(reader)
+                    .withType(StateCode.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
-            return csvToBean.parse();   //Converting them to list
+            return csvToBean.parse();
         }
         catch (NoSuchFileException e)
         {
@@ -51,10 +51,8 @@ public class IndianStateCensusAnalyzer
         {
             throw new CustomExceptionService(CustomExceptionService.ExceptionType.FILE_NOT_FOUND,"File Not Found");
         }
-        catch (IOException e)
+        catch (IOException | CsvValidationException e)
         {
-            e.printStackTrace();
-        } catch (CsvValidationException e) {
             e.printStackTrace();
         }
         return null;

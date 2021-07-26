@@ -1,6 +1,6 @@
 package com.bridgelabz.indianstatecensustest;
 
-import com.bridgelabz.indianstatecensus.CustomExceptionService;
+import com.bridgelabz.customexception.CustomExceptionService;
 import com.bridgelabz.indianstatecensus.IndianStateCensusAnalyzer;
 import com.bridgelabz.indianstatecensus.StateCences;
 import org.junit.jupiter.api.Assertions;

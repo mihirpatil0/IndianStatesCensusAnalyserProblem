@@ -1,2 +1,4 @@
+com/bridgelabz/indianstatecodetest/IndianStateCodeTest.java
+ com.bridgelabz.indianstatecodetest.IndianStateCodeTest
 com/bridgelabz/indianstatecensustest/IndianStateCensusTest.java
  com.bridgelabz.indianstatecensustest.IndianStateCensusTest
