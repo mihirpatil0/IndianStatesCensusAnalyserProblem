@@ -16,5 +16,5 @@ public class IndianStateCodeTest
         IndianStateCodeService codeService = new IndianStateCodeService();
         List<StateCode> stateCencesList = codeService.readIndiaStatCode(fileName);
         Assertions.assertEquals(37, stateCencesList.size());
-    }
+    }//
 }
